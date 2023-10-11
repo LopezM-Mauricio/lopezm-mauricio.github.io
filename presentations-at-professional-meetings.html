@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentations and Posters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .presentation-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .presentation {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .pdf-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Presentations and Posters</h1>
+    </header>
+    <main>
+        <ul class="presentation-list">
+            <li class="presentation">
+                <h2>Title of Presentation/Poster 1</h2>
+                <p>Summary of Presentation/Poster 1 goes here.</p>
+                <button class="expand-button" data-pdf="pdf1.pdf">Expand PDF</button>
+                <div class="pdf-container">
+                    <object data="pdf1.pdf" type="application/pdf" width="100%" height="400px">
+                        <p>It appears you don't have a PDF plugin for this browser. You can <a href="pdf1.pdf">download the PDF</a>.</p>
+                    </object>
+                </div>
+            </li>
+            <li class="presentation">
+                <h2>Title of Presentation/Poster 2</h2>
+                <p>Summary of Presentation/Poster 2 goes here.</p>
+                <button class="expand-button" data-pdf="pdf2.pdf">Expand PDF</button>
+                <div class="pdf-container">
+                    <object data="pdf2.pdf" type="application/pdf" width="100%" height="400px">
+                        <p>It appears you don't have a PDF plugin for this browser. You can <a href="pdf2.pdf">download the PDF</a>.</p>
+                    </object>
+                </div>
+            </li>
+            <!-- Add more presentations/posters as needed -->
+        </ul>
+    </main>
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+    <script>
+        // JavaScript to handle PDF expansion
+        const expandButtons = document.querySelectorAll(".expand-button");
+        expandButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const pdfContainer = button.nextElementSibling;
+                if (pdfContainer.style.display === "none") {
+                    pdfContainer.style.display = "block";
+                } else {
+                    pdfContainer.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
